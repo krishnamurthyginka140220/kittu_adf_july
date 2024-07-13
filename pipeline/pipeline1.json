@@ -1,0 +1,208 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"additionalColumns": [
+							{
+								"name": "fp",
+								"value": "$$FILEPATH"
+							},
+							{
+								"name": "fn",
+								"value": "$$FILENAME"
+							},
+							{
+								"name": "dupemp",
+								"value": "$$COLUMN:empname"
+							},
+							{
+								"name": "isactive",
+								"value": "Y"
+							},
+							{
+								"name": "pn",
+								"value": {
+									"value": "@pipeline().Pipeline",
+									"type": "Expression"
+								}
+							}
+						],
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "empid",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "empid",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "empname",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "empname",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "empsal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "empsal",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "empage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "empage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emploc",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "emploc",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "fp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "fp",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "fn",
+									"type": "String"
+								},
+								"sink": {
+									"name": "fn",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dupemp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "dupemp",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "isactive",
+									"type": "String"
+								},
+								"sink": {
+									"name": "isactive",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "pn",
+									"type": "String"
+								},
+								"sink": {
+									"name": "pn",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText3",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
