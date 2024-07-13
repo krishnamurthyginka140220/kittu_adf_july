@@ -32,7 +32,37 @@
 							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['game_index']"
+								},
+								"sink": {
+									"name": "game_index"
+								}
+							},
+							{
+								"source": {
+									"path": "['version']['name']"
+								},
+								"sink": {
+									"name": "name"
+								}
+							},
+							{
+								"source": {
+									"path": "['version']['url']"
+								},
+								"sink": {
+									"name": "url"
+								}
+							}
+						],
+						"collectionReference": "$['game_indices']"
+					}
 				},
 				"inputs": [
 					{
