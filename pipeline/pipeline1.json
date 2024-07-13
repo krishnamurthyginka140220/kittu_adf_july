@@ -27,12 +27,12 @@
 								"value": "$$FILENAME"
 							},
 							{
-								"name": "dupemp",
-								"value": "$$COLUMN:empname"
+								"name": "dupcm",
+								"value": "$$COLUMN:Total Price"
 							},
 							{
-								"name": "isactive",
-								"value": "Y"
+								"name": "cus",
+								"value": "active"
 							},
 							{
 								"name": "pn",
@@ -68,115 +68,72 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "empid",
+									"name": "Sale ID",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "empid",
+									"name": "Sale ID",
 									"type": "String",
 									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "empname",
+									"name": "Product",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "empname",
+									"name": "Product",
 									"type": "String",
 									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "empsal",
+									"name": "Quantity",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "empsal",
+									"name": "Quantity",
 									"type": "String",
 									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "empage",
+									"name": "Price per Unit",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "empage",
+									"name": "Price per Unit",
 									"type": "String",
 									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "emploc",
+									"name": "Total Price",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "emploc",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "fp",
-									"type": "String"
-								},
-								"sink": {
-									"name": "fp",
+									"name": "Total Price",
 									"type": "String",
 									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "fn",
-									"type": "String"
-								},
-								"sink": {
-									"name": "fn",
+									"name": "Sale Date",
 									"type": "String",
 									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "dupemp",
-									"type": "String"
 								},
 								"sink": {
-									"name": "dupemp",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "isactive",
-									"type": "String"
-								},
-								"sink": {
-									"name": "isactive",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "pn",
-									"type": "String"
-								},
-								"sink": {
-									"name": "pn",
+									"name": "Sale Date",
 									"type": "String",
 									"physicalType": "String"
 								}
@@ -191,13 +148,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText3",
+						"referenceName": "DelimitedText4",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "DelimitedText5",
 						"type": "DatasetReference"
 					}
 				]
