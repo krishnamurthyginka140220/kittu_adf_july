@@ -1,0 +1,21 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABS_kittustoragedata",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sample_excel.xlsx",
+				"folderPath": "excel",
+				"container": "source"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
