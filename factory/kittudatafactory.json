@@ -1,0 +1,9 @@
+{
+	"name": "kittudatafactory",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "85eac79e-207e-4540-a8f8-340eadbaa3cb",
+		"tenantId": "41f3e05c-d51c-4926-b028-e02d7446716f"
+	}
+}
