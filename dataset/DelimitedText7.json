@@ -1,0 +1,63 @@
+{
+	"name": "DelimitedText7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABS_kittustoragedata",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "destination"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "empid",
+				"type": "String"
+			},
+			{
+				"name": "empname",
+				"type": "String"
+			},
+			{
+				"name": "empsal",
+				"type": "String"
+			},
+			{
+				"name": "empage",
+				"type": "String"
+			},
+			{
+				"name": "emploc",
+				"type": "String"
+			},
+			{
+				"name": "fp",
+				"type": "String"
+			},
+			{
+				"name": "fn",
+				"type": "String"
+			},
+			{
+				"name": "dupemp",
+				"type": "String"
+			},
+			{
+				"name": "isactive",
+				"type": "String"
+			},
+			{
+				"name": "pn",
+				"type": "String"
+			}
+		]
+	}
+}
