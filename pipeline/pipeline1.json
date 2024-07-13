@@ -17,31 +17,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
-						"additionalColumns": [
-							{
-								"name": "fp",
-								"value": "$$FILEPATH"
-							},
-							{
-								"name": "fn",
-								"value": "$$FILENAME"
-							},
-							{
-								"name": "dupcm",
-								"value": "$$COLUMN:Total Price"
-							},
-							{
-								"name": "cus",
-								"value": "active"
-							},
-							{
-								"name": "pn",
-								"value": {
-									"value": "@pipeline().Pipeline",
-									"type": "Expression"
-								}
-							}
-						],
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
@@ -134,6 +109,61 @@
 								},
 								"sink": {
 									"name": "Sale Date",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "fp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "fp",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "fn",
+									"type": "String"
+								},
+								"sink": {
+									"name": "fn",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dupcm",
+									"type": "String"
+								},
+								"sink": {
+									"name": "dupcm",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "cus",
+									"type": "String"
+								},
+								"sink": {
+									"name": "cus",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "pn",
+									"type": "String"
+								},
+								"sink": {
+									"name": "pn",
 									"type": "String",
 									"physicalType": "String"
 								}
