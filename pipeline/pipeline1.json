@@ -46,7 +46,7 @@
 									"path": "['id']"
 								},
 								"sink": {
-									"name": "id"
+									"name": "company_departments'][0]['id"
 								}
 							},
 							{
@@ -54,7 +54,7 @@
 									"path": "['name']"
 								},
 								"sink": {
-									"name": "name"
+									"name": "company_departments'][0]['name"
 								}
 							},
 							{
@@ -62,7 +62,7 @@
 									"path": "['location']"
 								},
 								"sink": {
-									"name": "loc"
+									"name": "company_departments'][0]['location"
 								}
 							},
 							{
