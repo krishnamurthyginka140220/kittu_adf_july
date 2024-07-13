@@ -1,0 +1,101 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABS_kittustoragedata",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sample_dat.json",
+				"folderPath": "json",
+				"container": "source"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"trip": {
+					"type": "object",
+					"properties": {
+						"destination": {
+							"type": "string"
+						},
+						"departureCity": {
+							"type": "string"
+						},
+						"durationDays": {
+							"type": "integer"
+						},
+						"activities": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"oracleServer": {
+					"type": "object",
+					"properties": {
+						"installed": {
+							"type": "boolean"
+						},
+						"version": {
+							"type": "string"
+						}
+					}
+				},
+				"toolsInstalled": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"etlProcess": {
+					"type": "object",
+					"properties": {
+						"centralSchedulingTool": {
+							"type": "string"
+						},
+						"etlJobsTool": {
+							"type": "string"
+						},
+						"dataWarehouse": {
+							"type": "string"
+						},
+						"ec2Instances": {
+							"type": "boolean"
+						},
+						"s3Storage": {
+							"type": "boolean"
+						},
+						"forecastingProcess": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"dataOutput": {
+					"type": "object",
+					"properties": {
+						"archiving": {
+							"type": "string"
+						},
+						"transformedIn": {
+							"type": "string"
+						},
+						"financialPlanningTool": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	}
+}
