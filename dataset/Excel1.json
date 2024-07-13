@@ -14,6 +14,7 @@
 				"folderPath": "excel",
 				"container": "source"
 			},
+			"sheetIndex": 0,
 			"firstRowAsHeader": true
 		},
 		"schema": []
