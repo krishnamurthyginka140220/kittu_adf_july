@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "sample_dat.json",
+				"fileName": "complex_data.json",
 				"folderPath": "json",
 				"container": "source"
 			}

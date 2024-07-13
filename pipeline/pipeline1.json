@@ -59,54 +59,22 @@
 							},
 							{
 								"source": {
-									"path": "['age']"
+									"path": "['location']"
 								},
 								"sink": {
-									"name": "age"
+									"name": "loc"
 								}
 							},
 							{
 								"source": {
-									"path": "['position']"
+									"path": "['employees']"
 								},
 								"sink": {
-									"name": "position"
-								}
-							},
-							{
-								"source": {
-									"path": "['salary']"
-								},
-								"sink": {
-									"name": "salary"
-								}
-							},
-							{
-								"source": {
-									"path": "['department']['id']"
-								},
-								"sink": {
-									"name": "depid"
-								}
-							},
-							{
-								"source": {
-									"path": "['department']['name']"
-								},
-								"sink": {
-									"name": "depnam"
-								}
-							},
-							{
-								"source": {
-									"path": "['department']['location']"
-								},
-								"sink": {
-									"name": "deploc"
+									"name": "employees"
 								}
 							}
 						],
-						"collectionReference": "$['employees']"
+						"collectionReference": "$['company']['departments']"
 					}
 				},
 				"inputs": [
