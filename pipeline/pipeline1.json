@@ -53,8 +53,9 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Stored procedure1_copy1",
-							"type": "SqlServerStoredProcedure",
+							"name": "Script1",
+							"description": "",
+							"type": "Script",
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
@@ -64,12 +65,47 @@
 								"secureInput": false
 							},
 							"userProperties": [],
-							"typeProperties": {
-								"storedProcedureName": "[dbo].[mergeproc]"
-							},
 							"linkedServiceName": {
 								"referenceName": "Asql_kittudb",
 								"type": "LinkedServiceReference"
+							},
+							"typeProperties": {
+								"scripts": [
+									{
+										"parameters": [
+											{
+												"name": "d1",
+												"type": "String",
+												"value": {
+													"value": "@item().DID",
+													"type": "Expression"
+												},
+												"direction": "Input"
+											},
+											{
+												"name": "d2",
+												"type": "String",
+												"value": {
+													"value": "@item().DName",
+													"type": "Expression"
+												},
+												"direction": "Input"
+											},
+											{
+												"name": "d3",
+												"type": "String",
+												"value": {
+													"value": "@item().Loc",
+													"type": "Expression"
+												},
+												"direction": "Input"
+											}
+										],
+										"type": "Query",
+										"text": "\nDECLARE @EmployeeData dbo.empdatatype;\n\nINSERT INTO @EmployeeData (did, dname, dloc)\nVALUES (@d1,@d2,@d3);\n\nEXEC [dbo].[mergeproc] @ip = @EmployeeData;"
+									}
+								],
+								"scriptBlockExecutionTimeout": "02:00:00"
 							}
 						}
 					]
