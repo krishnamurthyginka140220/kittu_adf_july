@@ -22,6 +22,16 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"dataflow": {
+						"referenceName": "dataflow1",
+						"type": "DataFlowReference",
+						"parameters": {
+							"filename": {
+								"value": "'@{activity('Get Metadata1').output.itemName}'",
+								"type": "Expression"
+							}
+						}
+					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
@@ -46,7 +56,9 @@
 						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					},
-					"fieldList": [],
+					"fieldList": [
+						"itemName"
+					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
 						"enablePartitionDiscovery": false
