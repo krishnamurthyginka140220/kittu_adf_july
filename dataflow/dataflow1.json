@@ -12,9 +12,20 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"linkedService": {
+						"referenceName": "ABS_kittustoragedata",
+						"type": "LinkedServiceReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [],
 			"scriptLines": [
+				"parameters{",
+				"     filename as string",
+				"}",
 				"source(output(",
 				"          {Sale ID} as short,",
 				"          Product as string,",
@@ -34,7 +45,27 @@
 				"     columnDelimiter: ',',",
 				"     escapeChar: '\\\\',",
 				"     quoteChar: '\\\"',",
-				"     columnNamesAsHeader: true) ~> source1"
+				"     columnNamesAsHeader: true) ~> source1",
+				"source1 sink(allowSchemaDrift: false,",
+				"     validateSchema: false,",
+				"     format: 'delimited',",
+				"     container: 'destination',",
+				"     columnDelimiter: ',',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: true,",
+				"     partitionFileNames:['jjj.csv'],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          {Sale ID},",
+				"          Product,",
+				"          Quantity,",
+				"          {Price per Unit},",
+				"          {Total Price},",
+				"          {Sale Date}",
+				"     ),",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}
