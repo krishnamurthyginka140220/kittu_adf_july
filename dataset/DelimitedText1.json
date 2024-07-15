@@ -10,8 +10,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "hhh.csv",
-				"container": "staging"
+				"fileName": "sales_data.csv",
+				"folderPath": "csv",
+				"container": "source"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
