@@ -15,7 +15,11 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "externalCall1"
+					"name": "externalCall1",
+					"linkedService": {
+						"referenceName": "RestService5",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"scriptLines": [
@@ -25,11 +29,29 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 call(output(",
+				"source1 call(mapColumn(",
+				"          each(match(/* All input columns */ true()),",
+				"               /* Input name */ $$ = $$)",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     output(",
 				"          headers as [string,string],",
 				"          status as string",
 				"     ),",
-				"     allowSchemaDrift: true) ~> externalCall1"
+				"     allowSchemaDrift: true,",
+				"     format: 'rest',",
+				"     store: 'restservice',",
+				"     timeout: 30,",
+				"     requestInterval: 0,",
+				"     httpMethod: 'GET',",
+				"     rowRelativeUrl: 'did',",
+				"     headerColumnName: 'headers',",
+				"     bodyColumnName: 'body',",
+				"     statusColumnName: 'status',",
+				"     addResponseCode: true,",
+				"     requestFormat: ['type' -> 'json'],",
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> externalCall1"
 			]
 		}
 	}
