@@ -69,7 +69,7 @@
 				"     updateable: false,",
 				"     deletable: false,",
 				"     upsertable: true,",
-				"     keys:['empid'],",
+				"     keys:['id'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError',",
