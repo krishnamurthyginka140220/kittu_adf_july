@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "stocks.csv",
-				"folderPath": "csv",
+				"fileName": "LOOKUP.csv",
+				"folderPath": "csv/joins",
 				"container": "source"
 			},
 			"columnDelimiter": ",",
