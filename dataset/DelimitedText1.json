@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "csv",
+				"folderPath": "a3",
 				"container": "source"
 			},
 			"columnDelimiter": ",",
