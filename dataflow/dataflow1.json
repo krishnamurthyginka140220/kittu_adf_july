@@ -18,7 +18,7 @@
 				"source(output(",
 				"          {Sale ID} as short,",
 				"          Product as string,",
-				"          Quantity as integer,",
+				"          Quantity as string,",
 				"          {Price per Unit} as double,",
 				"          {Total Price} as double,",
 				"          {Sale Date} as date",
