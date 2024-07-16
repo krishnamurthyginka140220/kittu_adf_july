@@ -1,0 +1,33 @@
+{
+	"name": "DelimitedText6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABS_kittustoragedata",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "random_files.zip",
+				"container": "source"
+			},
+			"columnDelimiter": ",",
+			"compressionCodec": "ZipDeflate",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000LN�X���H<\u0000\u0000\u0000K\u0000\u0000\u0000\u000e\u0000\u0000\u0000cvbhkbjuuc.csv\u001dƻ\u0015� \f\u0003�^��@2\u0018\\�N>U�O^��}\u001f�y���\b�B�5��",
+				"type": "String"
+			},
+			{
+				"name": "�d\u0018�Tk�E\u00199�Ņ2G@_�\u0017PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000LN�X\u0014}�\u0012<\u0000\u0000\u0000H\u0000\u0000\u0000\u000e\u0000\u0000\u0000cnrssutenk.csv\u001d��\u0011�0\b\u0003{͢�\u0010l��:�]y��4����}�g\t�",
+				"type": "String"
+			}
+		]
+	}
+}
