@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "fixedlen.txt",
-				"folderPath": "a3",
+				"folderPath": "csv",
 				"container": "source"
 			},
 			"columnDelimiter": ",",
